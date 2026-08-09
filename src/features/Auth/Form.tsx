@@ -107,11 +107,11 @@ const Form = (): ReactElement => {
         onChangeIpt={handleChangeValue}
       >
         <FaRegEye
-          className={`absolute right-2 top-11.5 text-gray-600 text-xl active:opacity-30 group-hover:-translate-y-2 transition-all duration-300 ease-in-out ${isShowPass ? "hidden" : "block"}`}
+          className={`absolute right-2 top-11.5 text-gray-600 text-xl active:opacity-30 group-hover:-translate-y-2 transition-all duration-300 ease-in-out ${isShowPass ? "block" : "hidden"}`}
           onClick={handleChangeIcon}
         />
         <FaRegEyeSlash
-          className={`absolute right-2 top-11.5 text-gray-600 text-xl active:opacity-30 group-hover:-translate-y-2 transition-all duration-300 ease-in-out ${isShowPass ? "block" : "hidden"}`}
+          className={`absolute right-2 top-11.5 text-gray-600 text-xl active:opacity-30 group-hover:-translate-y-2 transition-all duration-300 ease-in-out ${isShowPass ? "hidden" : "block"}`}
           onClick={handleChangeIcon}
         />
       </FormInput>
