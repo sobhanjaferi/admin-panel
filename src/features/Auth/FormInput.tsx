@@ -1,9 +1,10 @@
-import { ComponentProps } from "react";
+import { ChangeEvent, ComponentProps } from "react";
 
 type Props = ComponentProps<"label"> &
   ComponentProps<"input"> & {
     title: string;
     placeholder?: string;
+    onChangeIpt: (e: ChangeEvent<HTMLInputElement>) => void;
   };
 
 const FormInput = ({
@@ -11,7 +12,9 @@ const FormInput = ({
   type,
   title,
   placeholder,
+  onChangeIpt,
   className,
+  value,
   children,
   ...otherProps
 }: Props) => {
@@ -28,6 +31,8 @@ const FormInput = ({
         placeholder={placeholder}
         className="p-2 rounded-md outline-none bg-white placeholder:text-gray-400 text-gray-800 w-full group-hover:-translate-y-2 transition-all duration-300 ease-in-out"
         required
+        onChange={onChangeIpt}
+        value={value}
       />
 
       {children}
