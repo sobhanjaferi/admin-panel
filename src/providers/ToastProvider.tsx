@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 import { Bounce, ToastContainer } from "react-toastify";
 
-const ToastifyContainer = ({ children }: { children: ReactNode }) => {
+const ToastifyProvider = ({ children }: { children: ReactNode }) => {
   return (
     <section>
       <ToastContainer
@@ -23,4 +23,4 @@ const ToastifyContainer = ({ children }: { children: ReactNode }) => {
   );
 };
 
-export default ToastifyContainer;
+export default ToastifyProvider;
