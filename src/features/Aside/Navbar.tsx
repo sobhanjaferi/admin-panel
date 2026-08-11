@@ -8,8 +8,9 @@ import { IoSettingsOutline } from "react-icons/io5";
 
 import Li from "./ListItem";
 import Link from "next/link";
+import { ReactNode } from "react";
 
-const Navbar = () => {
+const Navbar = (): ReactNode => {
   return (
     <nav className="flex flex-col justify-between items-center gap-10 w-full">
       <Link href={"/"}>

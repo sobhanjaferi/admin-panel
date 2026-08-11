@@ -1,8 +1,9 @@
 import IconButton from "@/components/IconButton";
 import Image from "next/image";
+import { ReactNode } from "react";
 import { CiMenuKebab } from "react-icons/ci";
 
-const Profile = () => {
+const Profile = (): ReactNode => {
   return (
     <section className="w-full flex justify-between items-center">
       <section className="flex justify-between items-center gap-5 hover:cursor-pointer">

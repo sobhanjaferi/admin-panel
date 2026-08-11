@@ -1,8 +1,9 @@
 import IconButton from "@/components/IconButton";
 import { FaBell } from "react-icons/fa";
 import SearchBar from "./SearchBar";
+import { ReactNode } from "react";
 
-const Header = () => {
+const Header = (): ReactNode => {
   const date: Date = new Date();
   const year: number = date.getFullYear();
   const month: number = date.getMonth();

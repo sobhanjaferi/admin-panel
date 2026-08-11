@@ -1,9 +1,9 @@
 "use client";
 
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent, ReactNode, useState } from "react";
 import { IoSearch } from "react-icons/io5";
 
-const SearchBar = () => {
+const SearchBar = (): ReactNode => {
   const [searchValue, setSearchValue] = useState<string>("");
 
   const handleChangeIpt = (e: ChangeEvent<HTMLInputElement>): void => {

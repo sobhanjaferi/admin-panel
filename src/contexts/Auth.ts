@@ -12,6 +12,6 @@ export type AuthContextType = {
 };
 
 export const authContext = createContext<AuthContextType>({
-  handleLogin: () => {},
-  handleLogout: () => {},
+  handleLogin: (): void => {},
+  handleLogout: (): void => {},
 });

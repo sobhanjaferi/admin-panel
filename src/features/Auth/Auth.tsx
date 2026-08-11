@@ -1,7 +1,8 @@
 import Image from "next/image";
 import Form from "./Form";
+import { ReactNode } from "react";
 
-const Auth = () => {
+const Auth = (): ReactNode => {
   return (
     <section className="bg-linear-to-r from-blue-900 via-blue-600 to-blue-900 w-screen h-screen flex justify-center items-center relative">
       <Image

@@ -1,6 +1,7 @@
 import Auth from "@/features/Auth/Auth";
+import { ReactNode } from "react";
 
-const AuthPage = () => {
+const AuthPage = (): ReactNode => {
   return (
     <section>
       <Auth />

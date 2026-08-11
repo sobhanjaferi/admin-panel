@@ -4,10 +4,10 @@ import { MdOutlineLogin } from "react-icons/md";
 import Button from "@/components/Button";
 import Profile from "./Profile";
 import Navbar from "./Navbar";
-import { useContext } from "react";
+import { ReactNode, useContext } from "react";
 import { authContext } from "@/contexts/Auth";
 
-const Aside = () => {
+const Aside = (): ReactNode => {
   const { handleLogout } = useContext(authContext);
 
   return (

@@ -23,7 +23,7 @@ const AuthContextProvider = ({ children }: { children: ReactNode }) => {
 
     if (data !== undefined) {
       toast.success("Wellcome to Admin Panel!", {
-        onClose: () => {
+        onClose: (): void => {
           cookieStore.set("auth_token", v4());
 
           route.push("/");

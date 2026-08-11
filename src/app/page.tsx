@@ -1,8 +1,9 @@
 import Aside from "@/features/Aside/Aside";
 import Header from "@/features/Header/Header";
 import AuthContextProvider from "@/providers/AuthContextProvider";
+import { ReactNode } from "react";
 
-const Home = () => {
+const Home = (): ReactNode => {
   return (
     <section className="grid grid-cols-5">
       <section className="col-span-1">
