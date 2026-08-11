@@ -14,6 +14,7 @@ import {
 import { AdminData, adminData } from "./AdminData";
 import { v4 } from "uuid";
 import { toast } from "react-toastify";
+import { useRouter } from "next/navigation";
 
 interface IptValues {
   email: string;
@@ -27,6 +28,8 @@ const Form = (): ReactElement => {
     password: "",
   });
   const [validate, setValidate] = useState<boolean>(false);
+
+  const route = useRouter();
 
   const handleChangeIcon = (): void => {
     setIsShowPass(!isShowPass);
@@ -45,8 +48,8 @@ const Form = (): ReactElement => {
   };
 
   useEffect(() => {
-    if (validate) window.location.reload();
-  }, [validate]);
+    if (validate) route.push("/");
+  }, [validate, route]);
 
   const handleValidation = useCallback((): void => {
     const data: AdminData | undefined = adminData.find(
@@ -58,8 +61,6 @@ const Form = (): ReactElement => {
     if (data !== undefined) {
       cookieStore.set("auth_token", v4());
 
-      setIptValues({ email: "", password: "" });
-
       toast.success("Wellcome to Admin Panel!", {
         onClose: () => {
           setValidate(true);
@@ -67,6 +68,8 @@ const Form = (): ReactElement => {
       });
     } else {
       toast.error("Data is Fake!");
+
+      setIptValues({ email: "", password: "" });
     }
   }, [iptValues]);
 
@@ -89,7 +92,6 @@ const Form = (): ReactElement => {
       <FormInput
         title="Email"
         onChangeIpt={handleChangeValue}
-        name="email"
         value={iptValues.email}
         id="email"
         placeholder="username@gmail.com"
@@ -99,7 +101,6 @@ const Form = (): ReactElement => {
       <FormInput
         title="Password"
         id="password"
-        name="password"
         value={iptValues.password}
         placeholder="Password"
         type={isShowPass ? "text" : "password"}
