@@ -8,6 +8,7 @@ import {
   ChangeEvent,
   ReactElement,
   useCallback,
+  useContext,
   useEffect,
   useState,
 } from "react";
@@ -15,8 +16,9 @@ import { AdminData, adminData } from "./AdminData";
 import { v4 } from "uuid";
 import { toast } from "react-toastify";
 import { useRouter } from "next/navigation";
+import { authContext } from "@/contexts/Auth";
 
-interface IptValues {
+export interface IptValues {
   email: string;
   password: string;
 }
@@ -27,9 +29,6 @@ const Form = (): ReactElement => {
     email: "",
     password: "",
   });
-  const [validate, setValidate] = useState<boolean>(false);
-
-  const route = useRouter();
 
   const handleChangeIcon = (): void => {
     setIsShowPass(!isShowPass);
@@ -47,31 +46,11 @@ const Form = (): ReactElement => {
     }
   };
 
-  useEffect(() => {
-    if (validate) route.push("/");
-  }, [validate, route]);
+  const { handleLogin } = useContext(authContext);
 
   const handleValidation = useCallback((): void => {
-    const data: AdminData | undefined = adminData.find(
-      (admin) =>
-        admin.email === iptValues.email &&
-        admin.password === iptValues.password,
-    );
-
-    if (data !== undefined) {
-      cookieStore.set("auth_token", v4());
-
-      toast.success("Wellcome to Admin Panel!", {
-        onClose: () => {
-          setValidate(true);
-        },
-      });
-    } else {
-      toast.error("Data is Fake!");
-
-      setIptValues({ email: "", password: "" });
-    }
-  }, [iptValues]);
+    handleLogin(iptValues, setIptValues);
+  }, [handleLogin, iptValues]);
 
   useEffect(() => {
     const handleClickEnterKey = (e: KeyboardEvent): void => {
