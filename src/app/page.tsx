@@ -1,4 +1,5 @@
 import Aside from "@/features/Aside/Aside";
+import Header from "@/features/Header/Header";
 import AuthContextProvider from "@/providers/AuthContextProvider";
 
 const Home = () => {
@@ -10,8 +11,12 @@ const Home = () => {
         </AuthContextProvider>
       </section>
 
-      <section className="col-span-4 p-5">
-        <h1>hello world</h1>
+      <section className="col-span-4">
+        <Header />
+
+        <section className="p-5">
+          {/* ===== all content will be placed here without header ===== */}
+        </section>
       </section>
     </section>
   );

@@ -19,19 +19,19 @@ const Navbar = () => {
       </Link>
 
       <ul className="w-full flex flex-col justify-between items-center gap-3">
-        <Li icon={<HiOutlineSquares2X2 />} title="Overview" />
+        <Li icon={<HiOutlineSquares2X2 />} title="Overview" link="/" />
 
-        <Li icon={<LuWallet />} title="Balances" />
+        <Li icon={<LuWallet />} title="Balances" link="/Balances" />
 
-        <Li icon={<GrTransaction />} title="Trancastion" />
+        <Li icon={<GrTransaction />} title="Trancastion" link="/Trancastion" />
 
-        <Li icon={<LiaMoneyBillSolid />} title="Bills" />
+        <Li icon={<LiaMoneyBillSolid />} title="Bills" link="/Bills" />
 
-        <Li icon={<IoReceiptOutline />} title="Expenses" />
+        <Li icon={<IoReceiptOutline />} title="Expenses" link="/Expenses" />
 
-        <Li icon={<GoGoal />} title="Goals" />
+        <Li icon={<GoGoal />} title="Goals" link="/Goals" />
 
-        <Li icon={<IoSettingsOutline />} title="Settings" />
+        <Li icon={<IoSettingsOutline />} title="Settings" link="/Settings" />
       </ul>
     </nav>
   );
