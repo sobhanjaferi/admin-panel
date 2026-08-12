@@ -6,7 +6,6 @@ import { FaRegEyeSlash } from "react-icons/fa";
 import FormInput from "./FormInput";
 import {
   ChangeEvent,
-  ReactElement,
   ReactNode,
   useCallback,
   useContext,
@@ -20,7 +19,7 @@ export interface IptValues {
   password: string;
 }
 
-const Form = (): ReactElement => {
+const Form = (): ReactNode => {
   const [isShowPass, setIsShowPass] = useState<boolean>(false);
   const [iptValues, setIptValues] = useState<IptValues>({
     email: "",
@@ -83,14 +82,17 @@ const Form = (): ReactElement => {
         className="relative"
         onChangeIpt={handleChangeValue}
       >
-        <FaRegEye
-          className={`absolute right-2 top-11.5 text-xl active:opacity-30 group-hover:-translate-y-2 transition-all duration-300 ease-in-out ${isShowPass ? "block" : "hidden"}`}
-          onClick={handleChangeIcon}
-        />
-        <FaRegEyeSlash
-          className={`absolute right-2 top-11.5 text-xl active:opacity-30 group-hover:-translate-y-2 transition-all duration-300 ease-in-out ${isShowPass ? "hidden" : "block"}`}
-          onClick={handleChangeIcon}
-        />
+        {isShowPass ? (
+          <FaRegEye
+            className={`text-gray-600 absolute right-2 top-11.5 text-xl active:opacity-30 group-hover:-translate-y-2 transition-all duration-300 ease-in-out`}
+            onClick={handleChangeIcon}
+          />
+        ) : (
+          <FaRegEyeSlash
+            className={`text-gray-600 absolute right-2 top-11.5 text-xl active:opacity-30 group-hover:-translate-y-2 transition-all duration-300 ease-in-out`}
+            onClick={handleChangeIcon}
+          />
+        )}
       </FormInput>
 
       <Link href={""} className="text-left w-full">

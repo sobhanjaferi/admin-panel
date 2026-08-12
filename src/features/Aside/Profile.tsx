@@ -8,9 +8,7 @@ const Profile = (): ReactNode => {
     <section className="w-full flex justify-between items-center">
       <section className="flex justify-between items-center gap-5 hover:cursor-pointer">
         <Image
-          src={
-            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBvq26wOg0Zi4H-gLYQKJsHN1IhEoteb3j2cn9u__ifA&s=10"
-          }
+          src={"/profile.png"}
           alt="profile image"
           width={1080}
           height={1080}
