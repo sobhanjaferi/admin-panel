@@ -1,13 +1,10 @@
 "use client";
 
 import { IptValues } from "@/features/Auth/Form";
-import { createContext, Dispatch, SetStateAction } from "react";
+import { createContext } from "react";
 
 export type AuthContextType = {
-  handleLogin: (
-    iptValues: IptValues,
-    setIptValues: Dispatch<SetStateAction<IptValues>>,
-  ) => void;
+  handleLogin: (iptValues: IptValues) => void;
   handleLogout: () => void;
 };
 
